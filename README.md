@@ -11,6 +11,6 @@ database schema file is attached in this project to the root folder as `init.sql
 
 ##Credential
 
-after running an admin account is with `username: 'admin'` and `password: 'password'`
-this provides an access and refresh token to be used throughout the runtime of the application
+Up on running an admin account is created with the following credentials `username: 'admin'` and `password: 'password'`
+this provides an access and refresh token to be used throughout the runtime of the application where authentication is necessary
 * access token lasts for 1 day while refreshToken lasts for 7 days.
