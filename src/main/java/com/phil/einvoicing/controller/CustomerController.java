@@ -86,6 +86,7 @@ public class CustomerController {
         return ResponseEntity.ok(customers);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         try {

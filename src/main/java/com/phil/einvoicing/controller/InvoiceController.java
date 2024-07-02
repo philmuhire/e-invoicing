@@ -31,6 +31,7 @@ public class InvoiceController {
     @Autowired
     private RabbitMQSender rabbitMQSender;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<?> create(@RequestBody InvoiceCreatePayload request){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/v1/customer").toUriString());
@@ -45,6 +46,7 @@ public class InvoiceController {
                     .build());
             rabbitMQSender.sendInvoiceCreatedMessage(invoice);
         } catch (Exception exception) {
+            System.out.println(exception);
             return (ResponseEntity<?>) ResponseEntity.badRequest().header(exception.getMessage());
         }
         return ResponseEntity.created(uri).body(invoice);

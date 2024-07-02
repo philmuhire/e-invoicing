@@ -19,7 +19,7 @@ public class Invoice {
     private Double amount;
     @CreatedDate
     @Column(insertable = false)
-    private LocalDateTime invoiceDate;
+    private LocalDateTime invoiceDate = LocalDateTime.now();
     @ManyToOne(fetch = FetchType.EAGER)
     private Customer customer;
     private InvoiceStatus status;
