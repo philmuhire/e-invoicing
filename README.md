@@ -14,3 +14,8 @@ database schema file is attached in this project to the root folder as `init.sql
 Up on running an admin account is created with the following credentials `username: 'admin'` and `password: 'password'`
 this provides an access and refresh token to be used throughout the runtime of the application where authentication is necessary
 * access token lasts for 1 day while refreshToken lasts for 7 days.
+
+
+##notification service and testing
+
+notifications handling by rabbitmq is implemented and working as it should so are the unit and integration tests
